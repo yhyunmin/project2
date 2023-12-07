@@ -1,4 +1,6 @@
-export default async function MainLayout({ children }): Promise<Element> {
+import { Props } from '@/types';
+
+export default async function MainLayout({ children }: Props) {
   return (
     <div>
       main Layout
