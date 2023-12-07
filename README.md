@@ -5,7 +5,9 @@ styled-componets,
 vanilla extract : choose 1 of them.  
 react query : fetching api.  
 use alias
-// 소괄호 폴더 : 주소창 관여안하고 그루핑 가능
+// 소괄호 폴더 : 주소창 관여안하고 레이아웃 그루핑 가능
+// \_폴더 : 주소창 관여안하고 프라이빗 하게 컴포넌트 관리 가능(폴더정리용)
+// (.) : 인터셉트 컴포넌트 라우팅을 대신 보여줌
 
 ## Getting Started
 

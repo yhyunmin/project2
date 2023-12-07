@@ -4,9 +4,11 @@
 // client Component 바꾸는법 ;
 'use client';
 //
+// (.)login : 도메인 /login 일시 login 컴포넌트 대신 인터셉트 컴포넌트가 보이게됨.
+// 현재 인터셉트 컴포넌트는 모달 컴포넌트이기에.public 컴포넌트와 동시에보여주게됨.
 import { useState } from 'react';
-import styles from '@/app/page.module.css';
-export default function Page() {
+import styles from '@/app/(public)/_component/login.module.css';
+export default function LoginModal() {
   const [id, setId] = useState();
   const [password, setPassword] = useState();
   const [message, setMessage] = useState();
