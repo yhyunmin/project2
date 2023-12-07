@@ -1,9 +1,11 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 msw : api mocking.  
-styled-componets : css in js.  
+styled-componets,
+vanilla extract : choose 1 of them.  
 react query : fetching api.  
 use alias
+// 소괄호 폴더 : 주소창 관여안하고 그루핑 가능
 
 ## Getting Started
 
