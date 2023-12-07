@@ -21,11 +21,13 @@
   font-weight: bold;
   font-size: 64px;
   margin: 48px 0;
+  color: blue;
 }
 .center h2 {
   font-weight: bold;
   font-size: 32px;
   margin-bottom: 32px;
+  color: skyblue;
 }
 .center h3 {
   font-weight: bold;
@@ -44,17 +46,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #fff;
 }
 .signup {
-  color: rgb(29, 155, 240);
-  border: 1px solid rgb(207, 217, 222);
+  color: #888;
+  background-color: transparent;
 }
 .signup:hover {
-  background-color: rgb(26, 140, 216);
+  color: #aaa;
 }
 .login {
-  border: 1px solid rgb(26, 140, 216);
+  border: 1px solid orange;
+  color: orange;
 }
 .login:hover {
-  background-color: rgb(29, 155, 240, 0.1);
+  background-color: orange;
+  color: white;
 }
