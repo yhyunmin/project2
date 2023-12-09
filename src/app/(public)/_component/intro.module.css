@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  background-color: #eee;
+  /* 가장쉽게 전체화면으로 채우는법 */
+  width: 100dvw;
+  height: 100dvh;
+  justify-content: center;
+  align-items: center;
+}
+
+.center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.center h1 {
+  font-weight: bold;
+  font-size: 64px;
+  margin: 48px 0;
+  color: blue;
+}
+.center h2 {
+  font-weight: bold;
+  font-size: 32px;
+  margin-bottom: 32px;
+  color: skyblue;
+}
+.center h3 {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.btn {
+  width: 300px;
+  height: 40px;
+  border-radius: 20px;
+  padding: 0 16px;
+  font-size: 15px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+.signup {
+  color: #888;
+  background-color: transparent;
+}
+.signup:hover {
+  color: #aaa;
+}
+.login {
+  border: 1px solid orange;
+  color: orange;
+}
+.login:hover {
+  background-color: orange;
+  color: white;
+}

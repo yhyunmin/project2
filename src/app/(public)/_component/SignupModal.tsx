@@ -26,5 +26,4 @@ export default function SingupModal() {
   const onChangeNickname = (e): void => {
     setNickname(e.target.value);
   };
-  
 }
