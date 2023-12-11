@@ -1,4 +1,4 @@
-import LoginModal from '@/app/(public)/_component/LoginModal';
+import Intro from '../_component/Intro';
 export default function Page() {
-  return <LoginModal />;
+  return <Intro />;
 }
