@@ -27,67 +27,81 @@ export default function SingupModal() {
   const onChangeImageFile: ChangeEventHandler<HTMLInputElement> = e => {
     e.target.files && setImageFile(e.target.files[0]);
   };
+  const onSubmit = (): void => {};
   return (
     <div className={styles.modalBackground}>
       <div className={styles.modal}>
         <div className={styles.modalHeader}>
-          <button onClick={() => onClickClose}>창닫기</button>
-          <h2>회원가입 모달</h2>
+          <button className={styles.closeBtn} onClick={() => onClickClose()}>
+            <svg width={24} viewBox='0 0 24 24' aria-hidden='true'>
+              <g>
+                <path d='M10.59 12L4.54 5.96l1.42-1.42L12 10.59l6.04-6.05 1.42 1.42L13.41 12l6.05 6.04-1.42 1.42L12 13.41l-6.04 6.05-1.42-1.42L10.59 12z'></path>
+              </g>
+            </svg>
+          </button>
+          <h2>회원가입</h2>
           <p>계정을 생성하세요</p>
-          <form action=''>
-            <div className={styles.inputDiv}>
-              <label htmlFor='id' className={styles.inputLabel}>
-                아이디
-              </label>
-              <input
-                type='text'
-                placeholder='아이디'
-                value={id}
-                onChange={onChangeId}
-                id='id'
-                className={styles.input}
-              />
-            </div>
+          <form onSubmit={onSubmit}>
+            <div className={styles.modalBody}>
+              <div className={styles.inputDiv}>
+                <label htmlFor='hmSignupId' className={styles.inputLabel}>
+                  아이디
+                </label>
+                <input
+                  type='text'
+                  id='hmSignupId'
+                  value={id}
+                  onChange={onChangeId}
+                  placeholder='아이디'
+                  className={styles.input}
+                />
+              </div>
 
-            <div className={styles.inputDiv}>
-              <label htmlFor='password' className={styles.inputLabel}>
-                비밀번호
-              </label>
-              <input
-                type='text'
-                placeholder='비밀번호'
-                value={password}
-                onChange={onChangePassword}
-                id='password'
-                className={styles.input}
-              />
-            </div>
-
-            <div>
-              <label htmlFor='nickname'>닉네임</label>
-              <input
-                type='text'
-                placeholder='닉네임'
-                value={nickname}
-                onChange={onChangeNickname}
-                id='nickname'
-                className={styles.input}
-              />
-            </div>
-            <div>
-              <label htmlFor='image'>프로필</label>
-              <input
-                type='file'
-                accept='image/*'
-                placeholder='닉네임'
-                value={image}
-                onChange={onChangeNickname}
-                id='image'
-                className={styles.input}
-              />
-            </div>
-            <div>
-              <button disabled>가입하기 </button>
+              <div className={styles.inputDiv}>
+                <label htmlFor='hmSignupPassword' className={styles.inputLabel}>
+                  비밀번호
+                </label>
+                <input
+                  type='text'
+                  placeholder='비밀번호'
+                  value={password}
+                  onChange={onChangePassword}
+                  id='hmSignupPassword'
+                  className={styles.input}
+                />
+              </div>
+              <div className={styles.inputDiv}>
+                <label htmlFor='hmSignupNickname' className={styles.inputLabel}>
+                  닉네임
+                </label>
+                <input
+                  type='text'
+                  placeholder='닉네임'
+                  value={nickname}
+                  onChange={onChangeNickname}
+                  id='hmSignupNickname'
+                  className={styles.input}
+                />
+              </div>
+              <div className={styles.inputDiv}>
+                <label htmlFor='hmSignupImage' className={styles.profileLabel}>
+                  프로필 이미지 등록
+                </label>
+                <input
+                  type='file'
+                  accept='image/*'
+                  placeholder='닉네임'
+                  value={image}
+                  onChange={onChangeNickname}
+                  id='hmSignupImage'
+                  className={styles.input}
+                />
+              </div>
+              <div>
+                <button className={styles.actionBtn} disabled>
+                  가입하기
+                </button>
+              </div>
             </div>
           </form>
         </div>

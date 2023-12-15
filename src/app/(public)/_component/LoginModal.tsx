@@ -26,11 +26,7 @@ export default function LoginModal() {
       <div className={styles.modal}>
         <div className={styles.modalHeader}>
           <button className={styles.closeBtn} onClick={() => onClickClose()}>
-            <svg
-              width={24}
-              viewBox='0 0 24 24'
-              aria-hidden='true'
-              className='r-18jsvk2 r-4qtqp9 r-yyyyoo r-z80fyv r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-19wmn03'>
+            <svg width={24} viewBox='0 0 24 24' aria-hidden='true'>
               <g>
                 <path d='M10.59 12L4.54 5.96l1.42-1.42L12 10.59l6.04-6.05 1.42 1.42L13.41 12l6.05 6.04-1.42 1.42L12 13.41l-6.04 6.05-1.42-1.42L10.59 12z'></path>
               </g>
@@ -41,12 +37,12 @@ export default function LoginModal() {
         <form onSubmit={onSubmit}>
           <div className={styles.modalBody}>
             <div className={styles.inputDiv}>
-              <label htmlFor='hmloginId' className={styles.inputLabel}>
+              <label htmlFor='hmLoginId' className={styles.inputLabel}>
                 아이디
               </label>
               <input
                 type='text '
-                id='hmloginId'
+                id='hmLoginId'
                 value={id}
                 onChange={onChangeId}
                 placeholder='아이디'

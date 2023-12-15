@@ -17,9 +17,8 @@
   background: #eee;
   top: 5%;
   position: relative;
-  max-width: 80vw;
   min-width: 320px;
-  padding: 0 8vw;
+  padding: 0 6vw;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -32,7 +31,6 @@
 /* close btn / title  */
 .modalHeader {
   width: 100%;
-  padding: 36px 80px 20px;
   font-size: 31px;
   font-weight: bold;
 }
@@ -52,7 +50,7 @@
 .inputDiv {
   display: flex;
   flex-direction: column;
-  height: 56px;
+  height: auto;
   position: relative;
   margin: 12px 0;
 }
@@ -71,7 +69,7 @@
 }
 .input {
   width: 100%;
-  height: 44px;
+  height: auto;
   border: none;
   font-size: 16px;
   margin-top: 16px;
@@ -92,7 +90,7 @@
   left: -20px;
 }
 .inputDiv:has(.input:focus) .inputLabel {
-  top: -8px;
+  top: -4px;
   padding: 0;
   opacity: 1;
 }

@@ -26,6 +26,7 @@
   align-items: center;
   height: 450px;
   display: flex;
+  height: auto;
 }
 /* close btn / title  */
 .modalHeader {
@@ -50,7 +51,7 @@
 .inputDiv {
   display: flex;
   flex-direction: column;
-  height: 56px;
+  height: auto;
   position: relative;
   margin: 12px 0;
 }
@@ -90,7 +91,7 @@
   left: -20px;
 }
 .inputDiv:has(.input:focus) .inputLabel {
-  top: -8px;
+  top: -4px;
   padding: 0;
   opacity: 1;
 }
@@ -135,4 +136,7 @@
   font-size: 11px;
   color: red;
   text-align: center;
+}
+.profileLabel {
+  font-size: 14px;
 }
