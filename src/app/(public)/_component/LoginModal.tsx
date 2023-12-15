@@ -8,50 +8,69 @@
 // 현재 인터셉트 컴포넌트는 모달 컴포넌트이기에.public 컴포넌트와 동시에보여주게됨.
 import { useState } from 'react';
 import styles from '@/app/(public)/_component/login.module.css';
+import { useRouter } from 'next/navigation';
 export default function LoginModal() {
+  const router = useRouter();
   const [id, setId] = useState();
   const [password, setPassword] = useState();
-  const [message, setMessage] = useState();
+  const [message, setMessage] = useState('아이디 혹은 비밀번호가 틀렸습니다.');
 
   const onSubmit = (): void => {};
-  const onCLickClose = (): void => {};
+  const onClickClose = (): void => {
+    router.back();
+  };
   const onChangeId = (e: React.ChangeEvent<HTMLInputElement>): void => {};
   const onChangePassword = (e: React.ChangeEvent<HTMLInputElement>): void => {};
   return (
     <div className={styles.modalBackground}>
       <div className={styles.modal}>
         <div className={styles.modalHeader}>
-          <button className={styles.closeBtn}>x</button>
-          <div>로그인하세요.</div>
+          <button className={styles.closeBtn} onClick={() => onClickClose()}>
+            <svg
+              width={24}
+              viewBox='0 0 24 24'
+              aria-hidden='true'
+              className='r-18jsvk2 r-4qtqp9 r-yyyyoo r-z80fyv r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-19wmn03'>
+              <g>
+                <path d='M10.59 12L4.54 5.96l1.42-1.42L12 10.59l6.04-6.05 1.42 1.42L13.41 12l6.05 6.04-1.42 1.42L12 13.41l-6.04 6.05-1.42-1.42L10.59 12z'></path>
+              </g>
+            </svg>
+          </button>
+          <h2>로그인 하세요.</h2>
         </div>
         <form onSubmit={onSubmit}>
           <div className={styles.modalBody}>
             <div className={styles.inputDiv}>
-              <label htmlFor='id'>아이디</label>
+              <label htmlFor='hmloginId' className={styles.inputLabel}>
+                아이디
+              </label>
               <input
                 type='text '
-                id='id'
+                id='hmloginId'
                 value={id}
                 onChange={onChangeId}
-                placeholder=''
+                placeholder='아이디'
+                className={styles.input}
               />
             </div>
             <div className={styles.inputDiv}>
-              <label htmlFor='password'>비밀번호</label>
+              <label htmlFor='hmloginPassword' className={styles.inputLabel}>
+                비밀번호
+              </label>
               <input
                 type='password'
-                id='password'
+                id='hmloginPassword'
                 value={password}
+                placeholder='비밀번호'
                 onChange={onChangePassword}
+                className={styles.input}
               />
+            </div>
+            <div className={styles.inputDiv}>
+              <button className={styles.actionBtn}>로그인하기</button>
             </div>
           </div>
           <div className={styles.message}>{message}</div>
-          <div className={styles.modalFooter}>
-            <button className={styles.actionBtn} disabled={!id && !password}>
-              로그인하기
-            </button>
-          </div>
         </form>
       </div>
     </div>

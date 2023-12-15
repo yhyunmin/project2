@@ -17,14 +17,14 @@ export default function Intro() {
           priority={true}
           className={styles.logo}
         />
-        <h1>타이틀</h1>
-        <h2>로그인하세요</h2>
+        <h1>Windjammer Gym</h1>
+        <p>윈드재머 짐 회원관리 페이지</p>
         <Link href='/login' className={`${styles.btn} ${styles.login}`}>
           로그인
         </Link>
-        <h3>or</h3>
+        <hr />
         <Link href='/signup' className={`${styles.btn} ${styles.signup}`}>
-          계정 만들기
+          계정생성
         </Link>
         {/* 페이지 라우팅 */}
         {/* redirect(); */}

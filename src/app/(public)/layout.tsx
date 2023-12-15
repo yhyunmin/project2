@@ -1,5 +1,6 @@
+// intro page layout
 import { Props } from '@/types';
-import styles from '@/app/page.module.css';
+import styles from './layout.module.css';
 export default function Layout({ children, modal }: Props) {
   return (
     <div className={styles.container}>

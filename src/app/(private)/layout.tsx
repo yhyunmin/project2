@@ -1,5 +1,5 @@
 import { Props } from '@/types';
-import styles from '@/app/layout.module.css';
+import styles from '@/app/(private)/layout.module.css';
 
 // flex-grow: 1
 const PrivateLayout = ({ children }: Props) => {

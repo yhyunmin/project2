@@ -1,7 +1,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { ChangeEventHandler, FormEventHandler, useState } from 'react';
-
+import styles from './signup.module.css';
 export default function SingupModal() {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
@@ -11,7 +11,7 @@ export default function SingupModal() {
 
   const router = useRouter();
 
-  const onCLickClose = () => {
+  const onClickClose = () => {
     router.back();
   };
 
@@ -28,62 +28,68 @@ export default function SingupModal() {
     e.target.files && setImageFile(e.target.files[0]);
   };
   return (
-    <div>
-      <h1>회원가입 모달</h1>
-      <div>
-        <div>
-          <div>
-            <button onClick={onCLickClose}>창닫기</button>
-            <div>계정을 생성하세요</div>
-            <form action=''>
-              <div>
-                <label htmlFor='id'>아이디</label>
-                <input
-                  type='text'
-                  placeholder='아이디'
-                  value={id}
-                  onChange={onChangeId}
-                  id='id'
-                />
-              </div>
+    <div className={styles.modalBackground}>
+      <div className={styles.modal}>
+        <div className={styles.modalHeader}>
+          <button onClick={() => onClickClose}>창닫기</button>
+          <h2>회원가입 모달</h2>
+          <p>계정을 생성하세요</p>
+          <form action=''>
+            <div className={styles.inputDiv}>
+              <label htmlFor='id' className={styles.inputLabel}>
+                아이디
+              </label>
+              <input
+                type='text'
+                placeholder='아이디'
+                value={id}
+                onChange={onChangeId}
+                id='id'
+                className={styles.input}
+              />
+            </div>
 
-              <div>
-                <label htmlFor='password'>비밀번호</label>
-                <input
-                  type='text'
-                  placeholder='비밀번호'
-                  value={password}
-                  onChange={onChangePassword}
-                  id='password'
-                />
-              </div>
+            <div className={styles.inputDiv}>
+              <label htmlFor='password' className={styles.inputLabel}>
+                비밀번호
+              </label>
+              <input
+                type='text'
+                placeholder='비밀번호'
+                value={password}
+                onChange={onChangePassword}
+                id='password'
+                className={styles.input}
+              />
+            </div>
 
-              <div>
-                <label htmlFor='nickname'>닉네임</label>
-                <input
-                  type='text'
-                  placeholder='닉네임'
-                  value={nickname}
-                  onChange={onChangeNickname}
-                  id='nickname'
-                />
-              </div>
-              <div>
-                <label htmlFor='image'>프로필</label>
-                <input
-                  type='file'
-                  accept='image/*'
-                  placeholder='닉네임'
-                  value={image}
-                  onChange={onChangeNickname}
-                  id='image'
-                />
-              </div>
-              <div>
-                <button disabled>가입하기 </button>
-              </div>
-            </form>
-          </div>
+            <div>
+              <label htmlFor='nickname'>닉네임</label>
+              <input
+                type='text'
+                placeholder='닉네임'
+                value={nickname}
+                onChange={onChangeNickname}
+                id='nickname'
+                className={styles.input}
+              />
+            </div>
+            <div>
+              <label htmlFor='image'>프로필</label>
+              <input
+                type='file'
+                accept='image/*'
+                placeholder='닉네임'
+                value={image}
+                onChange={onChangeNickname}
+                id='image'
+                className={styles.input}
+              />
+            </div>
+            <div>
+              <button disabled>가입하기 </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

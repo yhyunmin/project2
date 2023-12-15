@@ -12,7 +12,6 @@
   right: 0;
   bottom: 0;
 }
-/* container modal */
 .modal {
   background: #eee;
   top: 5%;
@@ -28,7 +27,6 @@
   height: 450px;
   display: flex;
 }
-
 /* close btn / title  */
 .modalHeader {
   width: 100%;
@@ -114,7 +112,6 @@
 .actionButton:hover {
   background-color: rgb(39, 44, 48);
 }
-
 .closeBtn {
   width: 34px;
   height: 34px;
@@ -134,7 +131,6 @@
 .closeButton:hover {
   background-color: rgba(15, 20, 25, 0.1);
 }
-
 .message {
   font-size: 11px;
   color: red;
