@@ -3,6 +3,8 @@ import styles from '@/app/(private)/layout.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from '@/assets/logo.png';
+import { NavMenu } from './_component/NavMenu';
+import { Logout } from './_component/Logout';
 // flex-grow: 1
 // 어드민페이지 main 레이아웃 잡기
 const PrivateLayout = ({ children }: Props) => {
@@ -20,7 +22,9 @@ const PrivateLayout = ({ children }: Props) => {
               <ul>
                 <NavMenu />
               </ul>
+              <Link href='/compose/threads'>글쓰기</Link>
             </nav>
+            <Logout />
           </div>
         </section>
       </header>

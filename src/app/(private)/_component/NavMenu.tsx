@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { useSelectedLayoutSegments } from 'next/navigation';
 import React from 'react';
-import { styles } from '@/app/page.module.css';
+import styles from './NavMenu.module.css';
 
 export const NavMenu = () => {
   // segment = useSelectedLayoutSegment();
