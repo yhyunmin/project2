@@ -11,3 +11,9 @@ button {
   cursor: pointer;
   background-color: transparent;
 }
+ul {
+  list-style: none;
+}
+a {
+  color: black;
+}

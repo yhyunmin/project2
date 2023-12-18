@@ -18,7 +18,7 @@ export const Logout = () => {
   return (
     <button className={styles.logOutBtn} onClick={onLogout}>
       <div className={styles.logOutUserImage}>
-        <Image src='{me.image}' alt='{me.id}' />
+        <Image src={me.image} alt='{me.id}' width={48} height={48} />
       </div>
       <div className={styles.logOutUserName}>
         <div>{me.name}</div>

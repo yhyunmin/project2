@@ -13,7 +13,7 @@ const PrivateLayout = ({ children }: Props) => {
       <header className={styles.leftSectionWrapper}>
         <section className={styles.leftSection}>
           <div className={styles.leftSectionFixed}>
-            <Link className={styles.logo} href='/main'>
+              <Link className={styles.logo} href='/main'>
               <div className={styles.logoPill}>
                 <Image src={Logo} alt='gym logo' width={48} height={48} />
               </div>
