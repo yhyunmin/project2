@@ -89,19 +89,3 @@
   margin-left: 5px;
   font-size: 15px;
 }
-.container > ul{
-  position: relative;
-  width: 100%;
-}
-.movingBox {
-  position: absolute;
-  top:46px;
-  left:0px;
-  margin: 0 10px;
-  z-index: -1;
-  background-color: blue;
-  height: 46px;
-  /* width: 275px; */
-  width:246px;
-  border-radius: 12px;
-}

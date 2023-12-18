@@ -1,20 +1,19 @@
 .navPill {
-    font-size: 24px;
-    padding: 8px;
-    opacity:0.9;
+  font-size: 24px;
+  padding: 8px;
+  opacity: 0.9;
 }
 .navPill:hover {
-    background-color: #eee;
-    opacity: 1;
-    
+  background-color: #eee;
+  opacity: 1;
 }
 
 .box {
-    position: relative;
-    z-index: -1;
-    width:max-content;
-    height:46px;
-    background-color:ivory;
-    border-radius: 12px;
-    width: 245px;
+  position: relative;
+  z-index: -1;
+  width: max-content;
+  height: 46px;
+  background-color: ivory;
+  border-radius: 12px;
+  width: 245px;
 }

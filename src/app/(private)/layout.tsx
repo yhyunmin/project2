@@ -13,9 +13,16 @@ const PrivateLayout = ({ children }: Props) => {
       <header className={styles.leftSectionWrapper}>
         <section className={styles.leftSection}>
           <div className={styles.leftSectionFixed}>
-              <Link className={styles.logo} href='/main'>
+            <Link
+              className={styles.logo}
+              href='/main'>
               <div className={styles.logoPill}>
-                <Image src={Logo} alt='gym logo' width={48} height={48} />
+                <Image
+                  src={Logo}
+                  alt='gym logo'
+                  width={48}
+                  height={48}
+                />
               </div>
             </Link>
             <nav>
@@ -30,12 +37,16 @@ const PrivateLayout = ({ children }: Props) => {
       </header>
       <div className={styles.rightSectionWrapper}>
         <div className={styles.rightSectionInner}>
-          {/* <main className={styles.main}>{children}</main> */}
-          {/* <section className={styles.rightSection}>
-            <form action=''>
+          <main className={styles.main}>{children}</main>
+          <section className={styles.rightSection}>
+            <form
+              action=''
+              className={styles.search}>
               <input type='search' />
             </form>
-          </section> */}
+            <CommuteStatus />
+            <StepOutNotify />
+          </section>
         </div>
       </div>
     </div>
