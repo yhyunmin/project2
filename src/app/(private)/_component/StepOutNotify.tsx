@@ -1,3 +1,3 @@
-export const StepOutNotify = () => {
-  return <div>StepOutNotify</div>;
+export const StepoutNotify = () => {
+  return <div>StepoutNotify</div>;
 };

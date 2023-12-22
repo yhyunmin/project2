@@ -5,6 +5,8 @@ import Image from 'next/image';
 import Logo from '@/assets/logo.png';
 import { NavMenu } from './_component/NavMenu';
 import { Logout } from './_component/Logout';
+import { CommuteStatus } from './_component/CommuteStatus';
+import { StepoutNotify } from './_component/StepOutNotify';
 // flex-grow: 1
 // 어드민페이지 main 레이아웃 잡기
 const PrivateLayout = ({ children }: Props) => {
@@ -45,7 +47,7 @@ const PrivateLayout = ({ children }: Props) => {
               <input type='search' />
             </form>
             <CommuteStatus />
-            <StepOutNotify />
+            <StepoutNotify />
           </section>
         </div>
       </div>
