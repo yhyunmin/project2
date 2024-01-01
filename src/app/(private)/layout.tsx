@@ -5,8 +5,8 @@ import Image from 'next/image';
 import Logo from '@/assets/logo.png';
 import { NavMenu } from './_component/NavMenu';
 import { Logout } from './_component/Logout';
-import { Notify } from './_component/Notify';
-import { StepOut } from './_component/Stepout';
+import { NotifySection } from './_component/NotifySection';
+import { StepOutSection } from './_component/StepOutSection';
 // flex-grow: 1
 // 어드민페이지 main 레이아웃 잡기
 const PrivateLayout = ({ children }: Props) => {
@@ -15,9 +15,16 @@ const PrivateLayout = ({ children }: Props) => {
       <header className={styles.leftSectionWrapper}>
         <section className={styles.leftSection}>
           <div className={styles.leftSectionFixed}>
-            <Link className={styles.logo} href='/main'>
+            <Link
+              className={styles.logo}
+              href='/main'>
               <div className={styles.logoPill}>
-                <Image src={Logo} alt='gym logo' width={48} height={48} />
+                <Image
+                  src={Logo}
+                  alt='gym logo'
+                  width={48}
+                  height={48}
+                />
               </div>
             </Link>
             <nav>
@@ -34,10 +41,15 @@ const PrivateLayout = ({ children }: Props) => {
         <div className={styles.rightSectionInner}>
           <main className={styles.main}>{children}</main>
           <section className={styles.rightSection}>
-            <form action='' className={styles.search}>
-              <input type='search' />
-            </form>
-            <Notify />
+            <div className={styles.rightSectionDiv}>
+              <form
+                action=''
+                className={styles.search}>
+                <input type='search' />
+              </form>
+            </div>
+            <NotifySection />
+            <StepOutSection />
           </section>
         </div>
       </div>

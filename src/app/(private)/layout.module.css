@@ -12,7 +12,7 @@
   flex-direction: column;
 }
 .leftSection {
-  background-color: orange;
+  /* background-color: orange; */
   width: 275px;
   height: 100dvh;
 }
@@ -49,8 +49,12 @@
   height: 100dvh;
   flex-direction: column;
 }
+.rightSectionDiv {
+  margin-bottom: 60px;
+  width: inherit;
+}
 .rightSectionInner {
-  background-color: aqua;
+  /* background-color: aqua; */
   height: 100%;
   width: 990px;
   display: flex;
@@ -61,7 +65,7 @@
 }
 
 .rightSection {
-  background-color: blue;
+  /* background-color: blue; */
   width: 350px;
   height: 100%;
 }

@@ -1,0 +1,45 @@
+.container {
+  padding: 12px 0;
+  height: 66px;
+  display: flex;
+}
+.userLogo {
+  width: 40px;
+  margin-right: 12px;
+}
+.userLogo,
+.userLogo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+.userInfo {
+  flex: 1;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 20px;
+}
+.count {
+  color: rgb(83, 100, 113);
+  font-size: 13px;
+  line-height: 16px;
+}
+.sendMessage {
+  width: 76px;
+}
+.sendMessage button {
+  width: 100%;
+  color: white;
+  background-color: black;
+  font-size: 14px;
+  font-weight: bold;
+  height: 32px;
+  border-radius: 16px;
+}
+.sendMessage button:hover {
+  background-color: rgb(39, 44, 48);
+}
