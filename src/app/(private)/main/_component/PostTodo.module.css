@@ -1,0 +1,85 @@
+.postUserSection {
+  margin-right: 12px;
+  width: 40px;
+}
+.postUserImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+.postUserImage img {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+.postForm {
+  margin-top: 101px;
+  display: flex;
+  padding: 16px 16px 8px;
+  border-color: rgb(239, 243, 244);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+.postInputSection {
+  flex: 1;
+}
+.postBtnSection {
+  width: 100%;
+}
+
+.postForm input {
+  width: 100%;
+  border: none;
+  padding: 12px 0;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.footerBtns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.footerBtnLeft {
+  flex: 1;
+}
+.selectDateBtn {
+  width: 34px;
+  height: 34px;
+  border: none;
+  cursor: pointer;
+  border-radius: 17px;
+  transition-duration: 0.2s;
+  transition-property: background-color;
+  background-color: rgb(29, 155, 240, 0.01);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.selectDateBtn:hover {
+  background-color: rgb(29, 155, 240, 0.1);
+}
+.selectDateBtn:active {
+  background-color: rgb(29, 155, 240, 0.2);
+}
+.selectDateBtn sgv {
+  /* svg icon color*/
+  fill: transparent;
+}
+.actionBtn:disabled {
+  opacity: 0.5;
+}
+
+.actionBtn {
+  width: 94px;
+  height: 36px;
+  border: none;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 18px;
+}
+.actionBtn:hover {
+  background-color: rgb(29, 155, 240, 0.1);
+}
