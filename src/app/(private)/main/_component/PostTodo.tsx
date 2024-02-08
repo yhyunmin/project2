@@ -8,6 +8,7 @@ import React, {
 
 import styles from './PostTodo.module.css';
 export const PostTodo = () => {
+  const imgRef = React.useRef<HTMLInputElement>(null);
   const [content, setContent] = useState('');
   const me: { id: string; img: string } = {
     id: '1',
@@ -20,6 +21,9 @@ export const PostTodo = () => {
   };
   const onSubmit: FormEventHandler = (e): void => {
     e.preventDefault();
+  };
+  const onClickBtn = () => {
+    imgRef.current?.click();
   };
   return (
     <div>
@@ -44,7 +48,11 @@ export const PostTodo = () => {
           <div className={styles.postBtnSection}>
             <div className={styles.footerBtns}>
               <div className={styles.footerBtnLeft}>
-                <button className={styles.selectDateBtn}>달력 아이콘</button>
+                <button
+                  className={styles.selectDateBtn}
+                  onClick={onClickBtn}>
+                  달력 아이콘
+                </button>
               </div>
               <button className={styles.actionBtn}>추가하기</button>
             </div>

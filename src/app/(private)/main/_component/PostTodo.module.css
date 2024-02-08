@@ -35,6 +35,9 @@
   font-size: 20px;
   line-height: 24px;
 }
+.postForm input::placeholder {
+  font-family: Malgun Gothic;
+}
 
 .footerBtns {
   display: flex;
