@@ -1,6 +1,11 @@
 import React from 'react';
 import styles from './Post.module.css';
 import Link from 'next/link';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+import 'dayjs/locale/ko';
+dayjs.locale('ko');
+dayjs.extend(relativeTime);
 const Post = () => {
   const target = {
     User: {
@@ -8,12 +13,12 @@ const Post = () => {
       nickname: 'nickname',
       img: '',
     },
-    Content: 'contentstring',
+    Content: 'contentString',
     CreateAt: new Date(),
     Imgs: [],
   };
   return (
-    <article>
+    <article className={styles.post}>
       <div className={styles.postWrapper}>
         <div className={styles.postUserSection}>
           <Link
@@ -27,25 +32,29 @@ const Post = () => {
           <div className={styles.postShade}></div>
         </div>
         <div className={styles.postBody}>
-          <Link href={`/${target.User.id}`}>
-            <span className={styles.postUserName}>{target.User.nickname}</span>
-            <span className={styles.postUserId}>{target.User.id}</span>
-            <span className={styles.postDate}>
-              {dayjs(target.CreateAt).fromNow()}
-            </span>
-          </Link>
+          <div className={styles.postMeta}>
+            <Link href={`/${target.User.id}`}>
+              <span className={styles.postUserName}>
+                {target.User.nickname}
+              </span>
+              <span className={styles.postUserId}>{target.User.id}</span>
+              <span className={styles.postDate}>
+                {dayjs(target.CreateAt).fromNow()}
+              </span>
+            </Link>
+          </div>
           <div>{target.Content}</div>
           <div className={styles.postImgSection}>
-            {target.Imgs.length > 8 && (
+            {/* {target.Imgs.length > 8 && (
               <div className={styles.postImageSection}>
                 <img
                   src={EventTarget.Imgs[0]?.link}
                   alt=''
                 />
               </div>
-            )}
+            )} */}
           </div>
-          <ActionButtons post={post} />
+          {/* <ActionButtons post={post} /> */}
         </div>
       </div>
     </article>

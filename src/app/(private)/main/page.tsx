@@ -4,6 +4,7 @@ import { Daily } from './_component/Daily';
 import { Weekly } from './_component/Weekly';
 import { PostTodo } from './_component/PostTodo';
 import TabProvider from './_component/TabProvider';
+import Post from './_component/Post';
 
 export default function Main() {
   return (
@@ -13,6 +14,7 @@ export default function Main() {
         <PostTodo />
         <Daily />
         <Weekly />
+        <Post />
       </TabProvider>
     </main>
   );
