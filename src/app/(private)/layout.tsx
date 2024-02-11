@@ -9,7 +9,7 @@ import { NotifySection } from './_component/NotifySection';
 import { StepOutSection } from './_component/StepOutSection';
 // flex-grow: 1
 // 어드민페이지 main 레이아웃 잡기
-const PrivateLayout = ({ children }: Props) => {
+const PrivateLayout = ({ children, modal }: Props) => {
   return (
     <div className={styles.container}>
       <header className={styles.leftSectionWrapper}>
@@ -53,6 +53,7 @@ const PrivateLayout = ({ children }: Props) => {
           </section>
         </div>
       </div>
+      {modal}
     </div>
   );
 };
