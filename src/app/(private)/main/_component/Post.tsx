@@ -12,9 +12,9 @@ const Post = () => {
     User: {
       id: '',
       nickname: 'nickname',
-      img: '',
+      img: 'https://picsum.photos/200/300',
     },
-    Content: 'contentString',
+    Content: 'Post 입니다. ',
     CreateAt: new Date(),
     Imgs: [],
   };

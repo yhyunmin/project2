@@ -11,6 +11,6 @@ export default function Layout({ children, modal }: Props) {
 }
 
 // children - page.tsx
-// modal - @modal/defaul.tsx
+// modal - @modal/default.tsx
 
 // /login - children ->login.tsx, modal ->@modal/login.tsx

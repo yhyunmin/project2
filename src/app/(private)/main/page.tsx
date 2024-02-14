@@ -12,8 +12,13 @@ export default function Main() {
       <TabProvider>
         <Tab />
         <PostTodo />
-        <Daily />
-        <Weekly />
+        {/* <Daily />
+        <Weekly /> */}
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
         <Post />
       </TabProvider>
     </main>
