@@ -1,0 +1,23 @@
+.filterTitle {
+  background-color: #fff;
+  padding: 12px 16px;
+  color: rgba(15, 20, 205, 1);
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  border-radius: 16px;
+  border: 1px solid rgb(239, 243, 244);
+  margin-top: 12px;
+}
+.filterSection {
+  padding: 0 16px 12px;
+  margin-bottom: 16ox;
+  border-radius: 16px;
+  border: 1px solid rgb(239, 243, 244);
+}
+
+.filterSection label {
+  font-size: 15px;
+  font-weight: bold;
+  height: 36px;
+}

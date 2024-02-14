@@ -7,6 +7,7 @@ import { NavMenu } from './_component/NavMenu';
 import { Logout } from './_component/Logout';
 import { NotifySection } from './_component/NotifySection';
 import { StepOutSection } from './_component/StepOutSection';
+import RightSearchZone from './_component/RightSearchZone';
 // flex-grow: 1
 // 어드민페이지 main 레이아웃 잡기
 const PrivateLayout = ({ children, modal }: Props) => {
@@ -41,13 +42,7 @@ const PrivateLayout = ({ children, modal }: Props) => {
         <div className={styles.rightSectionInner}>
           <main className={styles.main}>{children}</main>
           <section className={styles.rightSection}>
-            <div className={styles.rightSectionDiv}>
-              <form
-                action=''
-                className={styles.search}>
-                <input type='search' />
-              </form>
-            </div>
+            <RightSearchZone />
             <NotifySection />
             <StepOutSection />
           </section>
