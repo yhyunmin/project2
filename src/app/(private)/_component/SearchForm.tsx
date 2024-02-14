@@ -1,7 +1,11 @@
 import React from 'react';
 import styles from './SearchForn.module.css';
 
-const SearchForm = () => {
+type Props = {
+  q?: string;
+};
+
+const SearchForm = ({ q }: Props) => {
   return (
     <form
       action=''

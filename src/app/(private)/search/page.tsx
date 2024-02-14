@@ -1,9 +1,17 @@
 import styles from './search.module.css';
 import BackButton from './../_component/BackButton';
 import SearchForm from '../_component/SearchForm';
-import { Tab } from '../main/_component/Tab';
+import { Tab } from './_component/Tab';
+import Post from '../main/_component/Post';
 
-export default function Home() {
+type Props = {
+  searchParams: {
+    q: string;
+    f?: string;
+    pf?: string;
+  };
+};
+export default function Search({ searchParams }: Props) {
   return (
     <main className={styles.main}>
       <div className={styles.searchTop}>
@@ -12,13 +20,25 @@ export default function Home() {
             <BackButton />
           </div>
           <div className={styles.formZone}>
+          
             <SearchForm q={searchParams.q} />
           </div>
         </div>
         <Tab />
       </div>
       <div className={styles.list}>
-        <SearchResult searchParams={searchParams} />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        {/* <SearchResult searchParams={searchParams} /> */}
       </div>
     </main>
   );
