@@ -18,7 +18,9 @@ const Post = () => {
     },
     Content: 'Post 입니다. ',
     CreateAt: new Date(),
-    Imgs: [],
+    Imgs: [
+      {imageId:1,link:faker}
+    ],
   };
   return (
     <PostArticle post={post}>

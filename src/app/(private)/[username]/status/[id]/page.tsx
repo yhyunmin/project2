@@ -12,13 +12,15 @@ export default function Home() {
       </div>
       <Post />
       <CommentForm />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
+      <div>
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+      </div>
     </main>
   );
 }
