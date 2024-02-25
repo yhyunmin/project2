@@ -6,6 +6,7 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import 'dayjs/locale/ko';
 import ActionButtons from './ActionButtons';
 import PostArticle from './PostArticle';
+import { faker } from '@faker-js/faker';
 dayjs.locale('ko');
 dayjs.extend(relativeTime);
 const Post = () => {
@@ -18,9 +19,7 @@ const Post = () => {
     },
     Content: 'Post 입니다. ',
     CreateAt: new Date(),
-    Imgs: [
-      {imageId:1,link:faker}
-    ],
+    Imgs: [{ imageId: 1, link: faker.image.urlLoremFlickr() }],
   };
   return (
     <PostArticle post={post}>
@@ -50,14 +49,14 @@ const Post = () => {
           </div>
           <div>{target.Content}</div>
           <div className={styles.postImgSection}>
-            {/* {target.Imgs.length > 8 && (
-      <div className={styles.postImageSection}>
-        <img
-          src={EventTarget.Imgs[0]?.link}
-          alt=''
-        />
-      </div>
-    )} */}
+            {target.Imgs.length > 8 && (
+              <div className={styles.postImageSection}>
+                <img
+                  src={EventTarget.Imgs[0]?.link}
+                  alt=''
+                />
+              </div>
+            )}
           </div>
           <ActionButtons />
         </div>
