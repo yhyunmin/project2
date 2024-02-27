@@ -104,6 +104,11 @@
 .commentButton:hover .count {
   fill: rgb(29, 155, 240);
 }
+.commentButton.white svg,
+.commentButton.white .count {
+  fill: white;
+  color: white;
+}
 
 .repostButton.reposted svg,
 .repostButton:hover svg {
@@ -114,7 +119,11 @@
 .repostButton:hover .count {
   fill: rgb(11, 175, 123);
 }
-
+.repostButton.white svg,
+.repostButton.white .count {
+  fill: white;
+  color: white;
+}
 .heartButton:hover button {
   background-color: rgba(249, 24, 128, 0.1);
 }
@@ -126,4 +135,10 @@
 .heartButton.liked .count,
 .heartButton:hover .count {
   fill: rgb(228, 34, 126);
+}
+
+.heartButton.white svg,
+.heartButton.white .count {
+  fill: white;
+  color: white;
 }

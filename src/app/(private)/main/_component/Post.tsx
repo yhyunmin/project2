@@ -9,7 +9,11 @@ import PostArticle from './PostArticle';
 import { faker } from '@faker-js/faker';
 dayjs.locale('ko');
 dayjs.extend(relativeTime);
-const Post = () => {
+
+type Props = {
+  noImage?: boolean;
+};
+const Post = ({ noImage }: Props) => {
   const target = {
     postId: 1,
     User: {
@@ -21,6 +25,9 @@ const Post = () => {
     CreateAt: new Date(),
     Imgs: [{ imageId: 1, link: faker.image.urlLoremFlickr() }],
   };
+  if (Math.random() > 0.5) {
+    target.Imgs.push({ imageId: 2, link: faker.image.urlLoremFlickr() });
+  }
   return (
     <PostArticle post={target}>
       <div className={styles.postWrapper}>
