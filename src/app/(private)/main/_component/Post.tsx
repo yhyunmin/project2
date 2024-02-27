@@ -10,7 +10,7 @@ import { faker } from '@faker-js/faker';
 dayjs.locale('ko');
 dayjs.extend(relativeTime);
 const Post = () => {
-  const post = {
+  const target = {
     postId: 1,
     User: {
       id: '',
@@ -22,7 +22,7 @@ const Post = () => {
     Imgs: [{ imageId: 1, link: faker.image.urlLoremFlickr() }],
   };
   return (
-    <PostArticle post={post}>
+    <PostArticle post={target}>
       <div className={styles.postWrapper}>
         <div className={styles.postUserSection}>
           <Link
@@ -49,17 +49,20 @@ const Post = () => {
           </div>
           <div>{target.Content}</div>
           <div className={styles.postImgSection}>
-            {target.Imgs.length > 8 && (
-              <div className={styles.postImageSection}>
+            {target.Imgs && target.Imgs.length > 0 && (
+              <Link
+                href={`
+    /${target.User.id}/status/${target.postId}/photo/${target.Imgs[0].imageId}
+  `}>
                 <img
-                  src={EventTarget.Imgs[0]?.link}
+                  src={target.Imgs[0]?.link}
                   alt=''
                 />
-              </div>
+              </Link>
             )}
           </div>
-          <ActionButtons />
         </div>
+        <ActionButtons />
       </div>
     </PostArticle>
   );
