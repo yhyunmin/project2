@@ -7,6 +7,7 @@ import 'dayjs/locale/ko';
 import ActionButtons from './ActionButtons';
 import PostArticle from './PostArticle';
 import { faker } from '@faker-js/faker';
+import PostImages from './PostImages';
 dayjs.locale('ko');
 dayjs.extend(relativeTime);
 
@@ -17,13 +18,18 @@ const Post = ({ noImage }: Props) => {
   const target = {
     postId: 1,
     User: {
-      id: '',
+      id: 'userId',
       nickname: 'nickname',
       img: 'https://picsum.photos/200/300',
     },
     Content: 'Post 입니다. ',
     CreateAt: new Date(),
-    Imgs: [{ imageId: 1, link: faker.image.urlLoremFlickr() }],
+    Imgs: [
+      { imageId: 1, link: faker.image.urlLoremFlickr() },
+      { imageId: 2, link: faker.image.urlLoremFlickr() },
+      { imageId: 3, link: faker.image.urlLoremFlickr() },
+      { imageId: 4, link: faker.image.urlLoremFlickr() },
+    ],
   };
   if (Math.random() > 0.5) {
     target.Imgs.push({ imageId: 2, link: faker.image.urlLoremFlickr() });
@@ -55,18 +61,8 @@ const Post = ({ noImage }: Props) => {
             </Link>
           </div>
           <div>{target.Content}</div>
-          <div className={styles.postImgSection}>
-            {target.Imgs && target.Imgs.length > 0 && (
-              <Link
-                href={`
-    /${target.User.id}/status/${target.postId}/photo/${target.Imgs[0].imageId}
-  `}>
-                <img
-                  src={target.Imgs[0]?.link}
-                  alt=''
-                />
-              </Link>
-            )}
+          <div>
+            <PostImages post={target} />
           </div>
         </div>
         <ActionButtons />
