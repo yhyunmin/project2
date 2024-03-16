@@ -1,0 +1,40 @@
+.logOutBtn {
+  width: 66px;
+  height: 66px;
+  padding: 12px;
+  display: flex;
+  margin: 120x 0;
+  cursor: pointer;
+  border: none;
+  align-items: center;
+  background-color: #fff;
+  text-align: left;
+}
+.logOutUserName {
+  display: none;
+}
+.logOutBtn:hover {
+  background-color: rgba(15, 20, 25, 0.1);
+  border-radius: 33px;
+}
+.logOutUserImage img {
+  width: 40px;
+  border-radius: 50%;
+}
+@media all and (min-width: 1300px) {
+  .logOutBtn {
+    width: 258px;
+  }
+
+  .logOutUserImage {
+    display: flex;
+    align-items: center;
+  }
+  .logOutUserName {
+    margin: 0 12px;
+    display: inline-block;
+  }
+  .logOutUserName > div:first-child {
+    font-weight: bold;
+  }
+}

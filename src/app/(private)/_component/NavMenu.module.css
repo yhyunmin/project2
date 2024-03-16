@@ -17,3 +17,13 @@
   border-radius: 12px;
   width: 245px;
 }
+
+.navPill > p {
+  display: none;
+}
+
+@media all and (min-width: 1300px) {
+  .navPill > p {
+    display: inline-block;
+  }
+}

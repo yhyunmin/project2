@@ -32,7 +32,12 @@ const PrivateLayout = ({ children, modal }: Props) => {
               <ul>
                 <NavMenu />
               </ul>
-              <Link href='/compose/threads'>글쓰기</Link>
+              <Link
+                href='/compose/threads'
+                className={styles.postBtn}>
+                <span>작성하기</span>
+                <div>SVG 아이콘</div>
+              </Link>
             </nav>
             <Logout />
           </div>

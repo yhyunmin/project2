@@ -13,7 +13,7 @@
 }
 .leftSection {
   /* background-color: orange; */
-  width: 275px;
+  width: 72px;
   height: 100dvh;
 }
 .leftSectionFixed {
@@ -23,7 +23,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 8px;
 }
+@media all and (min-width: 1300px) {
+  .leftSection {
+    width: 275px;
+  }
+  .leftSectionFixed {
+    position: fixed;
+    width: inherit;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .logo {
   display: inline-block;
   height: 56px;
@@ -49,25 +64,35 @@
   height: 100dvh;
   flex-direction: column;
 }
+
 .rightSectionDiv {
   margin-bottom: 60px;
   width: inherit;
 }
+
 .rightSectionInner {
   /* background-color: aqua; */
   height: 100%;
-  width: 990px;
+  width: 600px;
   display: flex;
   justify-content: space-between;
 }
 .main {
   width: 600px;
 }
-
 .rightSection {
-  /* background-color: blue; */
-  width: 350px;
-  height: 100%;
+  display: none;
+}
+@media all and (min-width: 1024px) {
+  .rightSection {
+    /* background-color: blue; */
+    display: inline-block;
+    width: 350px;
+    height: 100%;
+  }
+  .rightSectionInner {
+    width: 990px;
+  }
 }
 .search {
   position: fixed;
@@ -92,4 +117,53 @@
   padding: 12px;
   margin-left: 5px;
   font-size: 15px;
+}
+
+.postBtn {
+  margin: 16px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 52px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 8px 28px;
+  background-color: rgb(29, 155, 240);
+  width: 234px;
+  border: none;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  font-size: 17px;
+  border-radius: 26px;
+}
+.postBtn:hover {
+  background-color: rgb(26, 140, 216);
+}
+.postBtn span {
+  display: none;
+}
+.postBtn svg {
+  display: inline-block;
+  fill: white;
+}
+@media all and (min-width: 1300px) {
+  .postBtn {
+    margin: 16px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 52px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 8px 28px;
+    background-color: rgb(29, 155, 240);
+    width: 234px;
+    border: none;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    font-size: 17px;
+    border-radius: 26px;
+  }
+  .postBtn span {
+    display: inline-block;
+  }
+  .postBtn svg {
+    display: none;
+  }
 }

@@ -8,6 +8,7 @@ import { Icon } from '@iconify/react';
 export const NavMenu = () => {
   // segment = useSelectedLayoutSegment();
   const me: {} = {};
+  //slug 가져오기
   const segments = useSelectedLayoutSegments();
   return (
     <>
@@ -16,17 +17,17 @@ export const NavMenu = () => {
           <div className={styles.navPill}>
             {segments[0] === 'main' ? (
               <>
-                <div style={{fontWeight:'bold'}}>
+                <div style={{ fontWeight: 'bold' }}>
                   <Icon icon='streamline:blank-calendar-solid' />
                   <Icon icon='streamline:blank-calendar' />
-                  대시보드
+                  <p>대시보드</p>
                 </div>
               </>
             ) : (
               <>
                 <div>
                   <Icon icon='streamline:blank-calendar' />
-                  대시보드
+                  <p>대시보드</p>
                 </div>
               </>
             )}
@@ -38,18 +39,18 @@ export const NavMenu = () => {
           <div className={styles.navPill}>
             {segments[0] === 'main' ? (
               <>
-                <div style={{fontWeight:'bold'}}>
-                <Icon icon='streamline:user-multiple-group' />
-                <Icon icon='streamline:user-multiple-group-solid' />
-                  회원관리(탐색하기)
-                  </div>
+                <div style={{ fontWeight: 'bold' }}>
+                  <Icon icon='streamline:user-multiple-group' />
+                  <Icon icon='streamline:user-multiple-group-solid' />
+                  <p>회원관리(탐색하기)</p>
+                </div>
               </>
             ) : (
               <>
                 <div>
-                <Icon icon='streamline:user-multiple-group' />
-                  회원관리(탐색하기)
-                  </div>
+                  <Icon icon='streamline:user-multiple-group' />
+                  <p>회원관리(탐색하기)</p>
+                </div>
               </>
             )}
           </div>
@@ -60,18 +61,18 @@ export const NavMenu = () => {
           <div className={styles.navPill}>
             {segments[0] === 'main' ? (
               <>
-                <div style={{fontWeight:'bold'}}>
-                <Icon icon='streamline:mail-send-envelope' />
-                <Icon icon='streamline:mail-send-envelope-solid' />
-                  메세지(메세지)
-                  </div>
+                <div style={{ fontWeight: 'bold' }}>
+                  <Icon icon='streamline:mail-send-envelope' />
+                  <Icon icon='streamline:mail-send-envelope-solid' />
+                  <p>메세지(메세지)</p>
+                </div>
               </>
             ) : (
               <>
-                <div >
-                <Icon icon='streamline:mail-send-envelope' />
-                  메세지(메세지)
-                  </div>
+                <div>
+                  <Icon icon='streamline:mail-send-envelope' />
+                  <p>메세지(메세지)</p>
+                </div>
               </>
             )}
           </div>
@@ -82,18 +83,18 @@ export const NavMenu = () => {
           <div className={styles.navPill}>
             {segments[0] === 'main' ? (
               <>
-                <div style={{fontWeight:'bold'}}>
-                <Icon icon='streamline:user-circle-single-solid' />
-                <Icon icon='streamline:user-circle-single' />
-                  프로필
-                  </div>
+                <div style={{ fontWeight: 'bold' }}>
+                  <Icon icon='streamline:user-circle-single-solid' />
+                  <Icon icon='streamline:user-circle-single' />
+                  <p>프로필</p>
+                </div>
               </>
             ) : (
               <>
                 <div>
-                <Icon icon='streamline:user-circle-single' />
-                  프로필
-                  </div>
+                  <Icon icon='streamline:user-circle-single' />
+                  <p>프로필</p>
+                </div>
               </>
             )}
           </div>
