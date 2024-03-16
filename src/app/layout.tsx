@@ -1,5 +1,6 @@
 import { Props } from '@/types';
 import '@/globals.css';
+import { MSWComponent } from './_component/MSWComponent';
 
 export const metadata = {
   title: {
@@ -14,7 +15,10 @@ export const metadata = {
 export default function RootLayout({ children, modal }: Props) {
   return (
     <html lang='en'>
-      <body>{children}</body>
+      <body>
+        <MSWComponent />
+        {children}
+      </body>
     </html>
   );
 }
