@@ -3,7 +3,7 @@ import { Props } from '@/types';
 import { ReactNode } from 'react';
 import styles from './Post.module.css';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 type PostProps = {
   children: ReactNode;
   post: {
