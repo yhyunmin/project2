@@ -26,4 +26,18 @@ export const handlers = [
       },
     });
   }),
+  // 회원가입
+  http.post('/api/users', async () => {
+    console.log('회원가입');
+    // 이미 회원가입되어있는 상황
+    return HttpResponse.text(JSON.stringify('user_exists'), {
+      status: 403,
+    });
+    // 성공
+    // return HttpResponse.text(JSON.stringify('ok'), {
+    //   headers: {
+    //     'Set-Cookie': 'connect.sid=;HttpOnly;Path=/;Max-Age=0',
+    //   },
+    // });
+  }),
 ];

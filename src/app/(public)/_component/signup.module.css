@@ -140,3 +140,8 @@
 .profileLabel {
   font-size: 14px;
 }
+
+.error {
+  font-weight: bold;
+  color: red;
+}

@@ -1,9 +1,9 @@
-// 'use client';
-// 서버컴포넌트에서의 서버 액션
-import { ChangeEventHandler, FormEventHandler, useState } from 'react';
+'use client';
+// 클라이언트 컴포넌트에서의 서버 액션
 import styles from './signup.module.css';
 import BackBtn from './BackBtn';
-import { redirect } from 'next/navigation';
+import onSubmit from '../_lib/signup';
+import { useFormState, useFormStatus } from 'react-dom';
 export default function SingupModal() {
   // const [id, setId] = useState('');
   // const [password, setPassword] = useState('');
@@ -25,49 +25,33 @@ export default function SingupModal() {
   // };
   // const onSubmit = (): void => {};
 
-  const submit = async (formData: FormData) => {
-    // formData.get('id');
-    'use server';
-    // form validation 검증 코드
-    if (!formData.get('id')) {
-      return { message: 'no_id' };
+  // 클라이언트 컴포넌트에서 서버액션을 사용하기위해 useFormState(), useFormStatus() 를 사용한다
+  // form 에서 state를 쓸수있는 useFormState(
+  // 데이터 폼이 서버에서 어떤상황인지 알 수 있는 useFormStatus();
+  //
+  //pending일 동안 로딩창, disabled처리 가능
+  const { pending } = useFormStatus();
+  // 첫번째 인자 서버액션 두번째 인자 초기값
+  const [state, formAction] = useFormState(onSubmit, {
+    message: null,
+  });
+  const showMessage = (message: string) => {
+    if (message === 'no_id') {
+      return '아이디를 입력해주세요.';
     }
-    if (!formData.get('password')) {
-      return { message: 'no_password' };
+    if (message === 'no_password') {
+      return '비밀번호를 입력해주세요.';
     }
-    if (!formData.get('nickname')) {
-      return { message: 'no_nickname' };
+    if (message === 'no_nickname') {
+      return '닉네임를 입력해주세요.';
     }
-    if (!formData.get('image')) {
-      return { message: 'no_image' };
+    if (message === 'no_image') {
+      return '이미지를 업로드하세요.';
     }
-    // try catch 안에서 redirect X 를위한 flag 변수
-    let shouldRedirect = false;
-    try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/users}`,
-        {
-          method: 'post',
-          body: formData,
-          // credentials: 쿠키
-          credentials: 'include',
-        }
-      );
-      console.log(response.status);
-      // 서버 status 에 따른 분기 작성
-      if (response.status === 403) {
-        return { message: 'user_exists' };
-      }
-
-      console.log(await response.json());
-      shouldRedirect = true;
-    } catch (err) {
-      console.log(err);
-      return;
+    if (message === 'user_exists') {
+      return '이미 사용중인 아이디입니다.';
     }
-    if (shouldRedirect) {
-      redirect('/main');
-    }
+    return '';
   };
   return (
     <div className={styles.modalBackground}>
@@ -76,7 +60,7 @@ export default function SingupModal() {
           <BackBtn />
           <h2>회원가입</h2>
           <p>계정을 생성하세요</p>
-          <form action={submit}>
+          <form action={formAction}>
             <div className={styles.modalBody}>
               <div className={styles.inputDiv}>
                 <label
@@ -143,9 +127,16 @@ export default function SingupModal() {
               <div>
                 <button
                   type='submit'
-                  className={styles.actionBtn}>
+                  className={styles.actionBtn}
+                  disabled={pending}>
                   가입하기
                 </button>
+                {/* state 활용을 위해 에러메세지 출력 엘리먼트 */}
+                {/* <div className={styles.error}>{state?.message}</div> */}
+                {/* 에러메시지 가공 */}
+                <div className={styles.error}>
+                  {showMessage(state?.message)}
+                </div>
               </div>
             </div>
           </form>
