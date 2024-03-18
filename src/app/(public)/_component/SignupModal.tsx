@@ -4,6 +4,7 @@ import { ChangeEventHandler, FormEventHandler, useState } from 'react';
 import styles from './signup.module.css';
 import BackBtn from './BackBtn';
 import { redirect } from 'next/navigation';
+import { signIn } from '@/auth';
 export default function SingupModal() {
   // const [id, setId] = useState('');
   // const [password, setPassword] = useState('');
@@ -61,6 +62,11 @@ export default function SingupModal() {
 
       console.log(await response.json());
       shouldRedirect = true;
+      await signIn('credentials', {
+        username: formData.get('id'),
+        password: formData.get('password'),
+        redirect: false,
+      });
     } catch (err) {
       console.log(err);
       return;

@@ -8,9 +8,11 @@ import { Logout } from './_component/Logout';
 import { NotifySection } from './_component/NotifySection';
 import { StepOutSection } from './_component/StepOutSection';
 import RightSearchZone from './_component/RightSearchZone';
+import { auth } from '@/auth';
 // flex-grow: 1
 // 어드민페이지 main 레이아웃 잡기
-const PrivateLayout = ({ children, modal }: Props) => {
+const PrivateLayout = async ({ children, modal }: Props) => {
+  const session = await auth();
   return (
     <div className={styles.container}>
       <header className={styles.leftSectionWrapper}>
@@ -28,17 +30,19 @@ const PrivateLayout = ({ children, modal }: Props) => {
                 />
               </div>
             </Link>
-            <nav>
-              <ul>
-                <NavMenu />
-              </ul>
-              <Link
-                href='/compose/threads'
-                className={styles.postBtn}>
-                <span>작성하기</span>
-                <div>SVG 아이콘</div>
-              </Link>
-            </nav>
+            {session?.user && (
+              <nav>
+                <ul>
+                  <NavMenu />
+                </ul>
+                <Link
+                  href='/compose/threads'
+                  className={styles.postBtn}>
+                  <span>작성하기</span>
+                  <div>SVG 아이콘</div>
+                </Link>
+              </nav>
+            )}
             <Logout />
           </div>
         </section>

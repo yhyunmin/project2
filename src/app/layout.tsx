@@ -1,6 +1,7 @@
 import { Props } from '@/types';
 import '@/globals.css';
 import { MSWComponent } from './_component/MSWComponent';
+import AuthSession from './_component/AuthSession';
 
 export const metadata = {
   title: {
@@ -17,7 +18,7 @@ export default function RootLayout({ children, modal }: Props) {
     <html lang='en'>
       <body>
         <MSWComponent />
-        {children}
+        <AuthSession>{children}</AuthSession>
       </body>
     </html>
   );
