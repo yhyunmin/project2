@@ -20,7 +20,7 @@ const PrivateLayout = async ({ children, modal }: Props) => {
           <div className={styles.leftSectionFixed}>
             <Link
               className={styles.logo}
-              href='/main'>
+              href={session?.user ? '/main' : '/'}>
               <div className={styles.logoPill}>
                 <Image
                   src={Logo}
