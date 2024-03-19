@@ -9,6 +9,7 @@ import { NotifySection } from './_component/NotifySection';
 import { StepOutSection } from './_component/StepOutSection';
 import RightSearchZone from './_component/RightSearchZone';
 import { auth } from '@/auth';
+import RQProvider from './_component/RQProvider';
 // flex-grow: 1
 // 어드민페이지 main 레이아웃 잡기
 const PrivateLayout = async ({ children, modal }: Props) => {
@@ -47,17 +48,20 @@ const PrivateLayout = async ({ children, modal }: Props) => {
           </div>
         </section>
       </header>
-      <div className={styles.rightSectionWrapper}>
-        <div className={styles.rightSectionInner}>
-          <main className={styles.main}>{children}</main>
-          <section className={styles.rightSection}>
-            <RightSearchZone />
-            <NotifySection />
-            <StepOutSection />
-          </section>
+      <RQProvider>
+        <div className={styles.rightSectionWrapper}>
+          <div className={styles.rightSectionInner}>
+            <main className={styles.main}>{children}</main>
+            <section className={styles.rightSection}>
+              <RightSearchZone />
+              <NotifySection />
+              <StepOutSection />
+            </section>
+          </div>
+          RQ
         </div>
-      </div>
-      {modal}
+        {modal}
+      </RQProvider>
     </div>
   );
 };

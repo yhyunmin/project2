@@ -8,29 +8,32 @@ import ActionButtons from './ActionButtons';
 import PostArticle from './PostArticle';
 import { faker } from '@faker-js/faker';
 import PostImages from './PostImages';
+import { Post } from '@/models/Post';
 dayjs.locale('ko');
 dayjs.extend(relativeTime);
 
 type Props = {
   noImage?: boolean;
+  post: Post;
 };
-const Post = ({ noImage }: Props) => {
-  const target = {
-    postId: 1,
-    User: {
-      id: 'userId',
-      nickname: 'nickname',
-      img: 'https://picsum.photos/200/300',
-    },
-    Content: 'Post 입니다. ',
-    CreateAt: new Date(),
-    Imgs: [
-      { imageId: 1, link: faker.image.urlLoremFlickr() },
-      { imageId: 2, link: faker.image.urlLoremFlickr() },
-      { imageId: 3, link: faker.image.urlLoremFlickr() },
-      { imageId: 4, link: faker.image.urlLoremFlickr() },
-    ],
-  };
+const Post = ({ noImage, post }: Props) => {
+  const target = post;
+  //  {
+  //   postId: 1,
+  //   User: {
+  //     id: 'userId',
+  //     nickname: 'nickname',
+  //     img: 'https://picsum.photos/200/300',
+  //   },
+  //   Content: 'Post 입니다. ',
+  //   CreateAt: new Date(),
+  //   Imgs: [
+  //     { imageId: 1, link: faker.image.urlLoremFlickr() },
+  //     { imageId: 2, link: faker.image.urlLoremFlickr() },
+  //     { imageId: 3, link: faker.image.urlLoremFlickr() },
+  //     { imageId: 4, link: faker.image.urlLoremFlickr() },
+  //   ],
+  // };
   if (Math.random() > 0.5) {
     target.Imgs.push({ imageId: 2, link: faker.image.urlLoremFlickr() });
   }
