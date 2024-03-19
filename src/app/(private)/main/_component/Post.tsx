@@ -31,12 +31,9 @@ const Post = ({ noImage, post }: Props) => {
   //     { imageId: 1, link: faker.image.urlLoremFlickr() },
   //     { imageId: 2, link: faker.image.urlLoremFlickr() },
   //     { imageId: 3, link: faker.image.urlLoremFlickr() },
-  //     { imageId: 4, link: faker.image.urlLoremFlickr() },
-  //   ],
-  // };
-  if (Math.random() > 0.5) {
-    target.Imgs.push({ imageId: 2, link: faker.image.urlLoremFlickr() });
-  }
+  //     { imageId: 4, link: faker.image.urlLoremFlickr() },z
+  target.Images.push({ imageId: 2, link: faker.image.urlLoremFlickr() });
+
   return (
     <PostArticle post={target}>
       <div className={styles.postWrapper}>
@@ -45,7 +42,7 @@ const Post = ({ noImage, post }: Props) => {
             href={`/${target.User.id}`}
             className={styles.postUserImage}>
             <img
-              src={target.User.img}
+              src={target.User.image}
               alt={target.User.nickname}
             />
           </Link>
@@ -59,11 +56,11 @@ const Post = ({ noImage, post }: Props) => {
               </span>
               <span className={styles.postUserId}>{target.User.id}</span>
               <span className={styles.postDate}>
-                {dayjs(target.CreateAt).fromNow()}
+                {dayjs(target.createAt).fromNow()}
               </span>
             </Link>
           </div>
-          <div>{target.Content}</div>
+          <div>{target.content}</div>
           <div>
             <PostImages post={target} />
           </div>
@@ -73,5 +70,4 @@ const Post = ({ noImage, post }: Props) => {
     </PostArticle>
   );
 };
-
 export default Post;

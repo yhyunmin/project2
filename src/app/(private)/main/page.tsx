@@ -51,12 +51,12 @@ export default async function Main() {
           <PostRecommends />
           {/* <Daily />
         <Weekly /> */}
+          {/* <Post />
           <Post />
           <Post />
           <Post />
           <Post />
-          <Post />
-          <Post />
+          <Post /> */}
         </TabProvider>
       </HydrationBoundary>
     </main>

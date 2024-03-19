@@ -4,19 +4,10 @@ import { ReactNode } from 'react';
 import styles from './Post.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { Post } from '@/models/Post';
 type PostProps = {
   children: ReactNode;
-  post: {
-    postId: number;
-    User: {
-      id: string;
-      nickname: string;
-      img: string;
-    };
-    Content: string;
-    CreateAt: Date;
-    Imgs: any[];
-  };
+  post:Post;
 };
 
 const PostArticle = ({ children, post }: PostProps) => {
